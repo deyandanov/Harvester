@@ -1,4 +1,8 @@
 package com.company;
 
-public class Drone {
+public class Drone implements IDrone {
+    @Override
+    public void scan(Field field) {
+
+    }
 }
