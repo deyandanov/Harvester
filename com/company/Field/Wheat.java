@@ -27,7 +27,7 @@ public class Wheat implements Comparable<Wheat> {
 
     @Override
     public int compareTo(Wheat o) {
-        int gDifference = numberOfGrains - o.getNumberOfGrains();
+        int gDifference = -numberOfGrains + o.getNumberOfGrains();
         if(gDifference != 0){
             return gDifference;
         }
