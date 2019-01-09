@@ -8,7 +8,7 @@ public class Field {
 
     public Field(){
 
-        fieldArray = new Wheat[x][y];
+        fieldArray = new Wheat[x][y];   // creates wheat plants without seeds
 
         for(int i = 0; i < x; i++){
 

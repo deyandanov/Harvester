@@ -26,7 +26,7 @@ public class Wheat implements Comparable<Wheat> {
     }
 
     @Override
-    public int compareTo(Wheat o) {
+    public int compareTo(Wheat o) {     // Compare to method used for the sorting of the TreeSet
         int gDifference = -numberOfGrains + o.getNumberOfGrains();
         if(gDifference != 0){
             return gDifference;

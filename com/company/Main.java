@@ -9,7 +9,13 @@ public class Main {
 
         Field field = new Field();
         BordComputer bordcomputer = new BordComputer(field);
+
+        System.out.println("Scannen ...");
+        field.PrintField(); // Unsortieretes HashSet darstellen
+
+        System.out.println("Sortierte Liste im Bordcomputer:");
         bordcomputer.droneScan();
-        //field.PrintField();
+        bordcomputer.sortedPrint();// Sortierte TreeSet darstellen
+
     }
 }

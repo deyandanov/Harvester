@@ -17,28 +17,34 @@ public class BordComputer implements IBoardComputer {
         this.field = field;
     }
 
-    /*public TreeMap<Point, Integer> processDroneScan(HashMap<Point, Integer> droneScan){
-        TreeMap<Point, Integer> processedMap = new TreeMap<Point, Integer>();
-        processedMap.putAll(droneScan);
-        //TODO sollen wir wirklich eine TreeMap sortieren?
-        return null;
-    }*/
 
     @Override
-    public void droneScan() {
+    public void droneScan() {//  sorting the wheat plant list
 
         Drone drone = new Drone();
-        Set<Wheat> treeSet = new TreeSet<Wheat>();
-        treeSet.addAll(drone.scanField(field));
 
-        for (Wheat wheat: treeSet) {
-            System.out.println("grains: "+wheat.getNumberOfGrains() + ", position[ x:" + wheat.getPosition().getX() + " y: "+ wheat.getPosition().getY()+" ]");
-        }
-        System.out.println("count: "+ treeSet.size());
+        sortedField.addAll(drone.scanField(field));
+
+
+
 
 
     }
+    public void sortedPrint(){ // printing the sorted list of wheats
+        int counter = 0;
 
+
+        for (Wheat wheat: sortedField) {
+
+            System.out.print("  { grains: "+wheat.getNumberOfGrains() + ", position[ x:" + wheat.getPosition().getX() + " y: "+ wheat.getPosition().getY()+" ]}  ");
+            counter ++;
+
+            if (counter%100==0){
+                System.out.print("\n");
+            }
+        }
+        System.out.println("\n count: "+ sortedField.size());
+    }
 
     public Field getField() {
         return field;
